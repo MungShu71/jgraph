@@ -132,8 +132,7 @@ int main(int argc, char** argv){
     if (argc <= 1) {
         cout << "WRONG USAGE; NEED CSV FILE\n";
         exit(0);
-
-
+    }
     j->Process(argv[1]);
 
     return 0;
