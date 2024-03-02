@@ -21,15 +21,10 @@ void Jgraph::Process(const string &filename){
     fin.open("test.jgr");
      fin << "newgraph\n";
     
-    
-    
-
     string s;
     string ticker ;
     string date;
-    // string ;
-    // char ticker[25  ];
-    // char date[25];
+
     int n, npts, i;
 
     string open, close, high, low, adj, max_price, min_price, vol, days, maxPrice;
@@ -48,7 +43,7 @@ void Jgraph::Process(const string &filename){
     int p;
     bool header = true;
     int dec = 0;
-    unsigned long long tt;
+
     int k;
     string labelsizex;
     string labelsizey;
@@ -58,9 +53,6 @@ void Jgraph::Process(const string &filename){
         if (header ){
             if (count == 1) {
                 getline(sin, days,'/');
-
-                cout <<(days.size()) << endl;
-
                 p = pow(10, days.size()-1) / 2;
                 if (days.size() <= 2) {
                     labelsizex += ".";
@@ -99,7 +91,7 @@ void Jgraph::Process(const string &filename){
         getline(sin, ticker, ',');
         
         if (curr_ticker != ticker) {
-            cout << ticker << endl;
+ 
             curr_ticker = ticker;
             n += 1;
             fin << "legend top\n";
@@ -122,10 +114,10 @@ void Jgraph::Process(const string &filename){
          if(i % p == 0 ) {
 
             fin << "xaxis hash_label at " << i << " : " << date << endl;
-            cout << i << endl;
+  
         }
         i ++;
-        tt ++ ;
+
 
         fin << "newcurve marktype box marksize .2 .2 linetype solid color " << colors[n] <<  " pts " << i << " " << open << "  " << i << " " << open 
                 << "  " << i << " " << close << "  " << i << " " << high << "  " << i << " " << low << " \n"; 
@@ -138,10 +130,9 @@ void Jgraph::Process(const string &filename){
 int main(int argc, char** argv){
     Jgraph *j = new Jgraph();
     if (argc <= 1) {
-        cout << "wrong usage\n";
+        cout << "WRONG USAGE; NEED CSV FILE\n";
         exit(0);
-    }
-    cout << "E\n";
+
 
     j->Process(argv[1]);
 
