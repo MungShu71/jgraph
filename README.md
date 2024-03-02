@@ -14,7 +14,7 @@ There is a makefile.
 
 ```make 5``` runs ```sh test.sh wmt tgt ko bf BAC PG JNJ 2019-1-1 2022-01-01 s```
 
-The shell script command takes in up to seven NASDAQ listed stock tickers, data range, and a S for small or B for big. 
+The shell script command takes in up to seven NASDAQ listed stock tickers, data range, and S for small or B for big. 
 
 **How it works** 
 The shell script calls the Python script ```main.py``` with the command line arguments as input. ```main.py``` does a API request for each stock's data over the given time frame. This data is written to the csv file ```eggs.csv```. Then ```main.cpp``` reads the CSV file and creates ```test.jgr```. Finally, the shell script compiles the jgr file into ```eggs.jpg```.
