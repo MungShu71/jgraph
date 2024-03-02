@@ -5,9 +5,13 @@
 There is a makefile. 
 
 ```make 1``` runs ```sh test.sh GME AMD BBBY 2020-01-01 2023-02-1 s```
+
 ```make 2``` runs ```sh test.sh nvda 2021-01-01 2024-02-1 s```
+
 ```make 3``` runs ```sh test.sh nvda aapl googl msft hd AMD 2010-01-01 2024-02-28 b```
+
 ```make 4``` runs ```sh test.sh tsm 2000-01-01 2024-02-28 b```
+
 ```make 5``` runs ```sh test.sh wmt tgt ko bf BAC PG JNJ 2019-1-1 2022-01-01 s```
 
 The shell script command takes in up to seven NASDAQ listed stock tickers, data range, and a S for small or B for big. 
