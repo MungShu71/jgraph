@@ -38,7 +38,7 @@ class Jgraph():
             self.headers = {
         	    "content-type": "application/x-www-form-urlencoded",
         	    "X-RapidAPI-Key": "b43be43a44msh52bc86ffba34392p150d9ajsna0b355819458",
-                # "X-RapidAPI-Key": "7d9f925bd4msh0edf07ea60cd181p1ef23ajsn41169cced24b",                             # yvy
+                # "X-RapidAPI-Key": "7d9f925bd4msh0edf07ea60cd181p1ef23ajsn41169cced24b",                             # yvy UNCOMMMENT AND COMMENT OUT TOKEN ABOVE TO USE
         	    "X-RapidAPI-Host": "yfinance-stock-market-data.p.rapidapi.com"
             }
 
@@ -106,7 +106,7 @@ class Jgraph():
         
     
     def request(self,ticker):
-        # print(ticker)
+
         if self.type == 'S':                     
             self.querystring["symbol"] = ticker.upper()                             # free
             response = requests.get(self.url, headers=self.headers, params=self.querystring)
@@ -126,7 +126,7 @@ class Jgraph():
 
     
     def get_data(self):
-        #  print(self.ci)
+
          for ticker in self.tickers:
               for i in ticker:
 
@@ -136,7 +136,7 @@ class Jgraph():
 
 
     def write_file(self):
-        # print(self.data)
+
         with open('eggs.csv', 'w', newline='') as csvfile:
    
             csvwriter = csv.DictWriter(csvfile, fieldnames= self.header)
@@ -163,7 +163,7 @@ c = Jgraph(sys.argv[1:-2], sys.argv[-3], sys.argv[-2], sys.argv[-1])
 
                         
 c.format_date()
-# print(c.request("e"))
+
 c.get_data()
-# print(c.data)
+
 c.write_file()
