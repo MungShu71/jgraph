@@ -14,6 +14,8 @@ There is a makefile.
 
 ```make 5``` runs ```sh test.sh wmt tgt ko bf BAC PG JNJ 2019-1-1 2022-01-01 s```
 
+```make clean``` removes the generated files.
+
 The shell script command takes in up to seven NASDAQ listed stock tickers, data range, and S for small or B for big. 
 
 **How it works** 
