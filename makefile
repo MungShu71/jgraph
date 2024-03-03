@@ -9,3 +9,5 @@
 	sh test.sh tsm 2000-01-01 2024-02-28 b
 5:
 	sh test.sh wmt tgt ko bf BAC PG JNJ 2019-1-1 2022-01-01 s 
+clean:
+	rm -f *.csv *.jpg *.jgr *.exe *.out
