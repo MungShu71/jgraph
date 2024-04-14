@@ -17,7 +17,7 @@ int main(){
    string line;
    while (cin >> line) v.push_back( stoll(line) );
 
-//git
+
    vsize = (v.size() - 2 ) / 3; 
    for (int i = 1; i < vsize+1; i++) {
       from.push_back(v[i]);
